@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('faq/q/', 'FaqQuestionController@index');
+Route::get('faq/q/{slug}', 'FaqQuestionController@show');
+Route::get('faq/t/', 'FaqTopicController@index');
+Route::get('faq/t/{topic}', 'FaqQuestionController@index');
